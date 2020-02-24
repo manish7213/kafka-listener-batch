@@ -14,6 +14,9 @@ import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * @author manish
+ */
 @Service
 public class Consumer {
 
@@ -33,8 +36,11 @@ public class Consumer {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            out.flush();
-            out.close();
+            if (out != null){
+                out.flush();
+                out.close();
+            }
+
         }
     }
 
