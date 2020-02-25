@@ -1,5 +1,6 @@
 package com.manish.kafkalistener.producer;
 
+import com.manish.kafkalistener.configuration.YAMLConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import java.io.*;
 public class Producer {
     private static final Logger logger = LoggerFactory.getLogger(Producer.class);
     private static final String TOPIC = "test";
-
     @Autowired
     private KafkaTemplate<String,String> kafkaTemplate;
     public void sendMessage(String message){
