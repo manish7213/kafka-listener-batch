@@ -25,7 +25,7 @@ public class KafkaController {
         this.producer.sendMessage(message);
     }
     @PostMapping(value = "/publish/file")
-    public void sendFileToKafkaTopic(@RequestParam("filePath") String filePath) throws IOException {
-        this.producer.sendFileToKafka(filePath);
+    public void sendFileToKafkaTopic(@RequestParam("filePath") String filePath,@RequestParam("topic") String topic) throws IOException {
+        this.producer.sendFileToKafka(filePath,topic);
     }
 }
